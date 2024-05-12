@@ -24,10 +24,14 @@ namespace dal.models
         public string nid { get; set; }
 
         public virtual ICollection<flat> flats { get; set; }
+        public virtual ICollection<tenant> tenants { get; set; }
+        public virtual ICollection<repair> repairs { get; set; }
 
         public user()
         {
             flats = new List<flat>();
+            tenants = new List<tenant>();
+            repairs = new List<repair>();
         }
     }
 }
