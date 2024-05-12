@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace dal.models
 {
@@ -33,5 +34,10 @@ namespace dal.models
 
         [ForeignKey("tenant_id")]
         public virtual user tenant { get; set; }
+        public virtual ICollection<tenant> tenants { get; set; }
+        public flat()
+        {
+            tenants = new List<tenant>();
+        }
     }
 }
