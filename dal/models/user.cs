@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dal.models
 {
@@ -11,15 +7,31 @@ namespace dal.models
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
         public string name { get; set; }
+
         [Required]
         public string email { get; set; }
+
         [Required]
         public string password { get; set; }
+
         [Required]
         public string role { get; set; }
+
         [Required]
         public string nid { get; set; }
+
+        public virtual ICollection<flat> flats { get; set; }
+        public virtual ICollection<tenant> tenants { get; set; }
+        public virtual ICollection<repair> repairs { get; set; }
+
+        public user()
+        {
+            flats = new List<flat>();
+            tenants = new List<tenant>();
+            repairs = new List<repair>();
+        }
     }
 }
