@@ -68,6 +68,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="interfaces\IRepo.cs" />
+    <Compile Include="Migrations\202405120805520_inintdb.cs" />
+    <Compile Include="Migrations\202405120805520_inintdb.designer.cs">
+      <DependentUpon>202405120805520_inintdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\SMContext.cs" />
     <Compile Include="models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="repos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202405120805520_inintdb.resx">
+      <DependentUpon>202405120805520_inintdb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
