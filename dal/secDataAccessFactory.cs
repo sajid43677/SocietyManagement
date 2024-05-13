@@ -16,7 +16,7 @@ namespace dal
             return new securityRepo();
         }
 
-        public static IRepo<gatepass, int, gatepass> GatePasstData()
+        public static IRepo<gatepass, int, gatepass> GatePassData()
         {
             return new gatepassRepo();
         }

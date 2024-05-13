@@ -71,7 +71,9 @@
     <Compile Include="DTOs\secSecurityDTO.cs" />
     <Compile Include="DTOs\secVerificationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\secGatepassService.cs" />
     <Compile Include="services\secSecurityService.cs" />
+    <Compile Include="services\secVerificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
