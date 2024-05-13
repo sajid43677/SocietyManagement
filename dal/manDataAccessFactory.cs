@@ -11,7 +11,7 @@ namespace dal
 {
     public class manDataAccessFactory
     {
-        public static IRepo<tenant, int, tenant> TenantData(){
+        public static IRepo<tenant, int, tenant> tenantData(){
             return new tenantRepo();
         }
 

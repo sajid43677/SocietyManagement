@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202405131804452_ook.designer.cs">
       <DependentUpon>202405131804452_ook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405131900469_ook2.cs" />
+    <Compile Include="Migrations\202405131900469_ook2.designer.cs">
+      <DependentUpon>202405131900469_ook2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\gatepass.cs" />
     <Compile Include="models\SMContext.cs" />
@@ -101,6 +105,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202405131804452_ook.resx">
       <DependentUpon>202405131804452_ook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405131900469_ook2.resx">
+      <DependentUpon>202405131900469_ook2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
