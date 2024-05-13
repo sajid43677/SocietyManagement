@@ -77,6 +77,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\manFlatService.cs" />
     <Compile Include="services\manRepairService.cs" />
+    <Compile Include="services\manServiceService.cs" />
+    <Compile Include="services\manTenantService.cs" />
     <Compile Include="services\secSecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
