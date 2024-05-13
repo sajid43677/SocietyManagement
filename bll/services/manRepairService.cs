@@ -74,9 +74,11 @@ namespace bll.services
             return mapped2;
         }
 
-        public static void Deleterepair(int id)
+        public static bool Deleterepair(int id)
         {
-            manDataAccessFactory.repairData().Delete(id);
+            return manDataAccessFactory.repairData().Delete(id);
         }
+
+        
     }
 }

@@ -74,9 +74,11 @@ namespace bll.services
             return mapped2;
         }
 
-        public static void DeleteFlat(int id)
+        public static bool DeleteFlat(int id)
         {
-            manDataAccessFactory.flatData().Delete(id);
+            return manDataAccessFactory.flatData().Delete(id);
         }
+
+        
     }
 }
