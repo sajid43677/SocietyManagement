@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace dal
 {
-    internal class secDataAccessFactory
+    public class secDataAccessFactory
     {
         public static IRepo<security, int, security> SecurityData()
         {
