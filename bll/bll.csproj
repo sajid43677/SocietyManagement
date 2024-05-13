@@ -67,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\secGatePassDTO.cs" />
+    <Compile Include="DTOs\secSecurityDTO.cs" />
+    <Compile Include="DTOs\secVerificationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,7 +77,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTOs\" />
     <Folder Include="services\" />
   </ItemGroup>
   <ItemGroup>
