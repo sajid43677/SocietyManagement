@@ -67,15 +67,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\secGatePassDTO.cs" />
+    <Compile Include="DTOs\secSecurityDTO.cs" />
+    <Compile Include="DTOs\secVerificationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\secSecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="services\" />
+    <ProjectReference Include="..\dal\dal.csproj">
+      <Project>{180a3559-0687-444f-87be-7cca7a88ad50}</Project>
+      <Name>dal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
