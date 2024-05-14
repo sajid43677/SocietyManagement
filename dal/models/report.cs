@@ -14,12 +14,13 @@ namespace dal.models
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
-        [ForeignKey("user")]
+        
         public int reportedBy { get; set; }
-        [ForeignKey("user")]
         public int reportedTo { get; set; }
-
+        [ForeignKey("reportedBy")]
         public virtual user user { get; set; }
+        [ForeignKey("reportedTo")]
+        public virtual user userto { get; set; }
 
     }
 }
