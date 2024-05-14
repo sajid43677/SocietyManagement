@@ -70,7 +70,9 @@
     <Compile Include="DTOs\manRepairDTO.cs" />
     <Compile Include="DTOs\manFlatDTO.cs" />
     <Compile Include="DTOs\manServiceDTO.cs" />
+    <Compile Include="DTOs\manServiceStatus.cs" />
     <Compile Include="DTOs\manTenantDTO.cs" />
+    <Compile Include="DTOs\manTenantsServices.cs" />
     <Compile Include="DTOs\secGatePassDTO.cs" />
     <Compile Include="DTOs\secSecurityDTO.cs" />
     <Compile Include="DTOs\secVerificationDTO.cs" />

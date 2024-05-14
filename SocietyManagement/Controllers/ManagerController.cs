@@ -87,6 +87,21 @@ namespace SocietyManagement.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+        [HttpGet]
+        [Route("api/flat/category/{category}")]
+        public HttpResponseMessage FlatsByCategory(string category)
+        {
+            try
+            {
+                var data = manFlatService.FlatsByCategory(category);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
         #endregion
 
         #region Service
@@ -315,6 +330,21 @@ namespace SocietyManagement.Controllers
             try
             {
                 var data = manTenantService.DeleteTenant(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/tenant/service/{id}")]
+        public HttpResponseMessage TenantServices(int id)
+        {
+            try
+            {
+                var data = manTenantService.TenantsServices(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

@@ -79,6 +79,31 @@ namespace bll.services
             return manDataAccessFactory.flatData().Delete(id);
         }
 
+        public static List<manFlatDTO> FlatsByCategory(string cat)
+        {
+            var data = new List<flat>();
+            if(cat == "High")
+            {
+                data = manDataAccessFactory.flatData().Read().Where(x => x.rent > 25000.0).ToList();
+            }
+            if (cat == "Medium")
+            {
+                data = manDataAccessFactory.flatData().Read().Where(x => x.rent > 10000.0 && x.rent <= 25000.0).ToList();
+            }
+            if (cat == "Low")
+            {
+                data = manDataAccessFactory.flatData().Read().Where(x => x.rent <= 10000.0).ToList();
+            }
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<flat, manFlatDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<List<manFlatDTO>>(data);
+            return mapped;
+
+        }
+
         
     }
 }

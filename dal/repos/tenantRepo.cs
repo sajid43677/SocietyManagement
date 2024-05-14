@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace dal.repos
 {
-    internal class tenantRepo : repo, IRepo<tenant, int, tenant>
+    internal class tenantRepo : repo, ITenantRepo
     {
         public tenant Create(tenant obj)
         {
@@ -24,6 +24,11 @@ namespace dal.repos
             db.tenants.Remove(ex);
             if (db.SaveChanges() > 0) return true;
             else { return false; }
+        }
+
+        public List<tenant> GetTenants(int userId)
+        {
+            return db.tenants.Where(x => x.tenantId == userId).ToList();
         }
 
         public List<tenant> Read()

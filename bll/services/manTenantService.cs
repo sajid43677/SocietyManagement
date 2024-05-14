@@ -78,5 +78,28 @@ namespace bll.services
         {
             return manDataAccessFactory.tenantData().Delete(id);
         }
+
+        public static manTenantsServices TenantsServices(int userId)
+        {
+            var utilities = manDataAccessFactory.tenantData().GetTenants(userId);
+
+            var servicesTaken = new List<manServiceStatus>();
+            foreach (var item in utilities)
+            {
+                var service = manDataAccessFactory.serviceData().Read(item.utilityId);
+                var serviceStatus = new manServiceStatus()
+                {
+                    service = service.utilityName,
+                    status = item.utilityStatus
+                };
+                servicesTaken.Add(serviceStatus);
+            }
+            var data = new manTenantsServices()
+            {
+                tenantId = userId,
+                services = servicesTaken
+            };
+            return data;   
+        }
     }
 }
