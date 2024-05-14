@@ -21,12 +21,9 @@ namespace dal.repos
         public bool Delete(int id)
         {
             var ex = Read(id);
-            if (ex != null)
-            {
-                db.announcements.Remove(ex);
-                return db.SaveChanges() > 0;
-            }
-            return false;
+            db.announcements.Remove(ex);
+            if (db.SaveChanges() > 0) return true;
+            else { return false; }
         }
 
         public announcement Read(int id)

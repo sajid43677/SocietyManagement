@@ -69,7 +69,7 @@ namespace SocietyManagement.Controllers
         [HttpPut]
         [Route("api/announcements/update")]
 
-        public HttpResponseMessage UpdateSecurity(announcementDto announcement)
+        public HttpResponseMessage UpdateAnnouncement(announcementDto announcement)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace SocietyManagement.Controllers
 
         [HttpDelete]
         [Route("api/announcements/delete/{id}")]
-        public HttpResponseMessage DeleteSecurity(int id)
+        public HttpResponseMessage DeleteAnnouncment(int id)
         {
             try
             {
@@ -95,6 +95,9 @@ namespace SocietyManagement.Controllers
             {
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
+
+
+
         }
     }
 }
