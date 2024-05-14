@@ -11,6 +11,9 @@ namespace dal.Models
     internal class SMContext : DbContext
     {
         public DbSet<user> users { get; set; }
+        public DbSet<announcement> announcements { get; set; }
+        public DbSet<comment> comments { get; set; }
+
 
     }
 }
