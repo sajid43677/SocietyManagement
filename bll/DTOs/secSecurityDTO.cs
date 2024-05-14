@@ -24,7 +24,9 @@ namespace bll.DTOs
         public int salary { get; set; }
 
 
-        public int user_id;
+      //  public int user_id { get; set;  }
+
+     //   public virtual user user { get; set; }
 
 
 

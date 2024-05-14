@@ -16,7 +16,7 @@ namespace dal
             return new securityRepo();
         }
 
-        public static IRepo<gatepass, int, gatepass> GatePasstData()
+        public static IRepo<gatepass, int, gatepass> GatePassData()
         {
             return new gatepassRepo();
         }
@@ -24,6 +24,11 @@ namespace dal
         public static IRepo<verification, int, verification> VerificationData()
         {
             return new verificationRepo();
+        }
+
+        public static IRepo<flat, int, flat> FlatData()
+        {
+            return new flatRepo();
         }
     }
 }
