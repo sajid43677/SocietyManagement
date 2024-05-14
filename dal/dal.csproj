@@ -71,9 +71,9 @@
     <Compile Include="interfaces\IRepo.cs" />
     <Compile Include="interfaces\ITenantRepo.cs" />
     <Compile Include="manDataAccessFactory.cs" />
-    <Compile Include="Migrations\202405141802475_iinitdbb.cs" />
-    <Compile Include="Migrations\202405141802475_iinitdbb.designer.cs">
-      <DependentUpon>202405141802475_iinitdbb.cs</DependentUpon>
+    <Compile Include="Migrations\202405141941190_initdb.cs" />
+    <Compile Include="Migrations\202405141941190_initdb.designer.cs">
+      <DependentUpon>202405141941190_initdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\gatepass.cs" />
@@ -101,8 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202405141802475_iinitdbb.resx">
-      <DependentUpon>202405141802475_iinitdbb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202405141941190_initdb.resx">
+      <DependentUpon>202405141941190_initdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
