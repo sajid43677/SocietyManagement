@@ -10,9 +10,11 @@ namespace dal.repos
     internal class repo
     {
         internal SMContext db;
+
         internal repo()
         {
-            db = new SMContext();
+            db = new SMContext(); 
+
         }
     }
 }

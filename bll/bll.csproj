@@ -99,14 +99,36 @@
     <Compile Include="Services\commentServices.cs" />
     <Compile Include="Services\reportServices.cs" />
     <Compile Include="Services\ruleServices.cs" />
+    <Compile Include="DTOs\manFlatDTO.cs" />
+    <Compile Include="DTOs\manRepairDTO.cs" />
+    <Compile Include="DTOs\manFlatDTO.cs" />
+    <Compile Include="DTOs\manServiceDTO.cs" />
+    <Compile Include="DTOs\manServiceStatus.cs" />
+    <Compile Include="DTOs\manTenantDTO.cs" />
+    <Compile Include="DTOs\manTenantsServices.cs" />
+    <Compile Include="DTOs\secGatePassDTO.cs" />
+    <Compile Include="DTOs\secGatepassFlatDTO.cs" />
+    <Compile Include="DTOs\secSecurityDTO.cs" />
+    <Compile Include="DTOs\secSecurityGatepassDTO.cs" />
+    <Compile Include="DTOs\secVerificationDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\secGatepassService.cs" />
+    <Compile Include="services\manFlatService.cs" />
+    <Compile Include="services\manRepairService.cs" />
+    <Compile Include="services\manServiceService.cs" />
+    <Compile Include="services\manTenantService.cs" />
+    <Compile Include="services\secSecurityService.cs" />
+    <Compile Include="services\secVerificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\dal\dal.csproj">
       <Project>{180A3559-0687-444F-87BE-7CCA7A88AD50}</Project>
+      <Project>{180a3559-0687-444f-87be-7cca7a88ad50}</Project>
       <Name>dal</Name>
     </ProjectReference>
   </ItemGroup>
