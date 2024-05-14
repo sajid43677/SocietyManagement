@@ -14,6 +14,8 @@ namespace dal.Models
         public DbSet<announcement> announcements { get; set; }
         public DbSet<comment> comments { get; set; }
 
+        public DbSet<report> reports { get; set; }
+
 
     }
 }

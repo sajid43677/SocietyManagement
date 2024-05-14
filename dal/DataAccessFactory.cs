@@ -3,6 +3,7 @@ using dal.models;
 using dal.repos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,12 @@ namespace dal
         {
             return new commentsRepo();
         }
+
+        public static IRepo<report, int, report> ReportData()
+        {
+            return new reportRepo();
+        }
+
 
     }
 }
