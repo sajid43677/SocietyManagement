@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace dal.repos
 {
-    internal class flatRepo : repo, IRepo<flat, int, flat>
+    internal class serviceRepo : repo, IRepo<service, int, service>
     {
-        public flat Create(flat obj)
+        public service Create(service obj)
         {
-            db.flats.Add(obj);
+            db.services.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;
         }
@@ -20,24 +20,24 @@ namespace dal.repos
         public bool Delete(int id)
         {
             var ex = Read(id);
-            db.flats.Remove(ex);
+            db.services.Remove(ex);
             if (db.SaveChanges() > 0) return true;
             else { return false; }
         }
 
-        public List<flat> Read()
+        public List<service> Read()
         {
-            return db.flats.ToList();
+            return db.services.ToList();
         }
 
-        public flat Read(int id)
+        public service Read(int id)
         {
-            return db.flats.Find(id);
+            return db.services.Find(id);
         }
 
-        public flat Update(flat obj)
+        public service Update(service obj)
         {
-            var ex = db.flats.Find(obj.Id);
+            var ex = db.services.Find(obj.Id);
             db.Entry(ex).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;

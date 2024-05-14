@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace dal.repos
 {
-    internal class flatRepo : repo, IRepo<flat, int, flat>
+    internal class tenantRepo : repo, ITenantRepo
     {
-        public flat Create(flat obj)
+        public tenant Create(tenant obj)
         {
-            db.flats.Add(obj);
+            
+            db.tenants.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;
         }
@@ -20,24 +21,29 @@ namespace dal.repos
         public bool Delete(int id)
         {
             var ex = Read(id);
-            db.flats.Remove(ex);
+            db.tenants.Remove(ex);
             if (db.SaveChanges() > 0) return true;
             else { return false; }
         }
 
-        public List<flat> Read()
+        public List<tenant> GetTenants(int userId)
         {
-            return db.flats.ToList();
+            return db.tenants.Where(x => x.tenantId == userId).ToList();
         }
 
-        public flat Read(int id)
+        public List<tenant> Read()
         {
-            return db.flats.Find(id);
+            return db.tenants.ToList();
         }
 
-        public flat Update(flat obj)
+        public tenant Read(int id)
         {
-            var ex = db.flats.Find(obj.Id);
+            return db.tenants.Find(id);
+        }
+
+        public tenant Update(tenant obj)
+        {
+            var ex = db.tenants.Find(obj.Id);
             db.Entry(ex).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;

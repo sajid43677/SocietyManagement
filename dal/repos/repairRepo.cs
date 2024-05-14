@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace dal.repos
 {
-    internal class flatRepo : repo, IRepo<flat, int, flat>
+    internal class repairRepo : repo, IRepairRepo
     {
-        public flat Create(flat obj)
+        public repair Create(repair obj)
         {
-            db.flats.Add(obj);
+            db.repairs.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;
         }
@@ -20,28 +20,36 @@ namespace dal.repos
         public bool Delete(int id)
         {
             var ex = Read(id);
-            db.flats.Remove(ex);
+            db.repairs.Remove(ex);
             if (db.SaveChanges() > 0) return true;
             else { return false; }
         }
 
-        public List<flat> Read()
+       
+
+        public List<repair> Read()
         {
-            return db.flats.ToList();
+            return db.repairs.ToList();
         }
 
-        public flat Read(int id)
+        public repair Read(int id)
         {
-            return db.flats.Find(id);
+            return db.repairs.Find(id);
         }
 
-        public flat Update(flat obj)
+        public repair Update(repair obj)
         {
-            var ex = db.flats.Find(obj.Id);
+            var ex = db.repairs.Find(obj.Id);
             db.Entry(ex).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;
 
+        }
+
+        public int GetRepairCountForUser(int userId)
+        {
+            var data = db.repairs.Where(r => r.userId == userId && r.repairStatus.Equals("pending")).ToList();
+            return data.Count;
         }
     }
 }

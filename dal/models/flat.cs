@@ -9,16 +9,12 @@ namespace dal.models
         [Key]
         public int Id { get; set; }
 
-        [Required]
         public string flat_number { get; set; }
 
-        [Required]
         public string building_number { get; set; }
 
-        [Required]
         public double rent { get; set; }
 
-        [Required]
         public string status { get; set; }
 
         public int? owner_id { get; set; }
