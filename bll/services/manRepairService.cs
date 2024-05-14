@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using bll.DTOs;
 using dal;
+using dal.interfaces;
 using dal.models;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,12 @@ namespace bll.services
 
         public static manRepairDTO Addrepair(manRepairDTO repair)
         {
+            var d = manDataAccessFactory.repairData();
+            var countOfRepair = d.GetRepairCountForUser(repair.userId);
+            if(countOfRepair > 3)
+            {
+                throw new InvalidOperationException("User has already reached the maximum limit of repairs.");
+            }
             var cfg = new MapperConfiguration(c =>
             {
                 c.CreateMap<manRepairDTO, repair>();
@@ -80,5 +87,7 @@ namespace bll.services
         }
 
         
+
+
     }
 }

@@ -17,10 +17,11 @@ namespace dal
 
         public static IRepo<service, int, service> serviceData()
         {
+            
             return new serviceRepo();
         }
 
-        public static IRepo<repair, int, repair> repairData()
+        public static IRepairRepo repairData()
         {
             return new repairRepo();
         }

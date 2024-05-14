@@ -67,15 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="interfaces\IRepairRepo.cs" />
     <Compile Include="interfaces\IRepo.cs" />
     <Compile Include="manDataAccessFactory.cs" />
-    <Compile Include="Migrations\202405131804452_ook.cs" />
-    <Compile Include="Migrations\202405131804452_ook.designer.cs">
-      <DependentUpon>202405131804452_ook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202405131900469_ook2.cs" />
-    <Compile Include="Migrations\202405131900469_ook2.designer.cs">
-      <DependentUpon>202405131900469_ook2.cs</DependentUpon>
+    <Compile Include="Migrations\202405140645595_intitdbbs.cs" />
+    <Compile Include="Migrations\202405140645595_intitdbbs.Designer.cs">
+      <DependentUpon>202405140645595_intitdbbs.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\gatepass.cs" />
@@ -103,11 +100,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202405131804452_ook.resx">
-      <DependentUpon>202405131804452_ook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202405131900469_ook2.resx">
-      <DependentUpon>202405131900469_ook2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202405140645595_intitdbbs.resx">
+      <DependentUpon>202405140645595_intitdbbs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

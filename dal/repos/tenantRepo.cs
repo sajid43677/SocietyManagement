@@ -12,6 +12,7 @@ namespace dal.repos
     {
         public tenant Create(tenant obj)
         {
+            
             db.tenants.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;

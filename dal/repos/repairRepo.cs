@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace dal.repos
 {
-    internal class repairRepo : repo, IRepo<repair, int, repair>
+    internal class repairRepo : repo, IRepairRepo
     {
         public repair Create(repair obj)
         {
@@ -24,6 +24,8 @@ namespace dal.repos
             if (db.SaveChanges() > 0) return true;
             else { return false; }
         }
+
+       
 
         public List<repair> Read()
         {
@@ -42,6 +44,12 @@ namespace dal.repos
             if (db.SaveChanges() > 0) return obj;
             else return null;
 
+        }
+
+        public int GetRepairCountForUser(int userId)
+        {
+            var data = db.repairs.Where(r => r.userId == userId && r.repairStatus.Equals("pending")).ToList();
+            return data.Count;
         }
     }
 }
