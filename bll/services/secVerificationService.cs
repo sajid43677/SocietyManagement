@@ -81,5 +81,32 @@ namespace bll.services
         {
             return secDataAccessFactory.VerificationData().Delete(id);
         }
+
+
+        public static secVerificationDTO UpdatePenalty(secVerificationDTO verification)
+        {
+            var existingEntity = secDataAccessFactory.VerificationData().Read(verification.vid);
+
+            existingEntity.penalty++;
+
+            if (existingEntity.penalty >= 5)
+            {
+                existingEntity.status = "Not allowed";
+            }
+
+            var updatedEntity = secDataAccessFactory.VerificationData().Update(existingEntity);
+
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<verification, secVerificationDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            var updatedDTO = mapper.Map<secVerificationDTO>(updatedEntity);
+
+            return updatedDTO;
+        }
+
+
+
     }
 }

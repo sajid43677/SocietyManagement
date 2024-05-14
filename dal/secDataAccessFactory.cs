@@ -25,5 +25,10 @@ namespace dal
         {
             return new verificationRepo();
         }
+
+        public static IRepo<flat, int, flat> FlatData()
+        {
+            return new flatRepo();
+        }
     }
 }

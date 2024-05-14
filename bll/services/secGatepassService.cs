@@ -81,5 +81,36 @@ namespace bll.services
         {
             return secDataAccessFactory.GatePassData().Delete(id);
         }
+
+
+        public static secGatepassFlatDTO Gatepasswithflatid(int id)
+        {
+            var data = secDataAccessFactory.FlatData().Read(id);
+
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<flat, secGatepassFlatDTO>();
+                c.CreateMap<gatepass, secGatePassDTO>();
+            });
+
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<secGatepassFlatDTO>(data);
+            return mapped;
+        }
+
+        /*public static secSecurityGatepassDTO Gatepasswithid(int id)
+        {
+            var data = secDataAccessFactory.SecurityData().Read(id);
+
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<security, secSecurityGatepassDTO>();
+                c.CreateMap<gatepass, secGatePassDTO>();
+            });
+
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<secSecurityGatepassDTO>(data);
+            return mapped;
+        }*/
     }
 }

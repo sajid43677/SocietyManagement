@@ -83,6 +83,7 @@
     <Compile Include="models\service.cs" />
     <Compile Include="models\tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repos\flatRepo.cs" />
     <Compile Include="repos\gatepassRepo.cs" />
     <Compile Include="repos\repo.cs" />
     <Compile Include="repos\securityRepo.cs" />

@@ -91,6 +91,22 @@ namespace SocietyManagement.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/security/{id}/gatepass")]
+
+        public HttpResponseMessage Gatepasswithid(int id)
+        {
+            try
+            {
+                var data = secSecurityService.Gatepasswithid(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
 
 
 
@@ -178,6 +194,23 @@ namespace SocietyManagement.Controllers
         }
 
 
+        [HttpPut]
+        [Route("api/verification/updatepenalty")]
+
+        public HttpResponseMessage UpdatePenalty(secVerificationDTO verification)
+        {
+            try
+            {
+                var data = secVerificationService.UpdatePenalty(verification);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
 
 
         //  GatePass API starts here
@@ -255,7 +288,25 @@ namespace SocietyManagement.Controllers
         {
             try
             {
-                var data = secSecurityService.Delete(id);
+                var data = secGatepassService.Delete(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        [HttpGet]
+        [Route("api/gatepass/{id}/flat")]
+
+        public HttpResponseMessage Gatepasswithflatid(int id)
+        {
+            try
+            {
+                var data = secGatepassService.Gatepasswithflatid(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
