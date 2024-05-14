@@ -27,11 +27,17 @@ namespace dal.models
         public virtual ICollection<tenant> tenants { get; set; }
         public virtual ICollection<repair> repairs { get; set; }
 
+        public virtual ICollection<announcement> announcements { get; set; }
+
+
+
+
         public user()
         {
             flats = new List<flat>();
             tenants = new List<tenant>();
             repairs = new List<repair>();
+            announcements = new List<announcement>();
         }
     }
 }

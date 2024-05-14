@@ -14,6 +14,7 @@ namespace dal.repos
         internal repo()
         {
             db = new SMContext(); 
+
         }
     }
 }

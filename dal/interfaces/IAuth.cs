@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dal
+namespace dal.interfaces
 {
-    public class Class1
+    public interface IAuth<Ret>
     {
+        Ret Authenticate(string email, string password);
     }
 }
