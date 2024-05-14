@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{431D05B0-6FFF-436A-9FC8-A3774FC50078}</ProjectGuid>
+    <ProjectGuid>{180A3559-0687-444F-87BE-7CCA7A88AD50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>bll</RootNamespace>
-    <AssemblyName>bll</AssemblyName>
+    <RootNamespace>dal</RootNamespace>
+    <AssemblyName>dal</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -67,32 +67,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DTOs\manRepairDTO.cs" />
-    <Compile Include="DTOs\manFlatDTO.cs" />
-    <Compile Include="DTOs\manServiceDTO.cs" />
-    <Compile Include="DTOs\manServiceStatus.cs" />
-    <Compile Include="DTOs\manTenantDTO.cs" />
-    <Compile Include="DTOs\manTenantsServices.cs" />
-    <Compile Include="DTOs\secGatePassDTO.cs" />
-    <Compile Include="DTOs\secSecurityDTO.cs" />
-    <Compile Include="DTOs\secVerificationDTO.cs" />
+    <Compile Include="interfaces\IRepairRepo.cs" />
+    <Compile Include="interfaces\IRepo.cs" />
+    <Compile Include="interfaces\ITenantRepo.cs" />
+    <Compile Include="manDataAccessFactory.cs" />
+    <Compile Include="Migrations\202405141802475_iinitdbb.cs" />
+    <Compile Include="Migrations\202405141802475_iinitdbb.designer.cs">
+      <DependentUpon>202405141802475_iinitdbb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="models\gatepass.cs" />
+    <Compile Include="models\SMContext.cs" />
+    <Compile Include="models\verification.cs" />
+    <Compile Include="models\flat.cs" />
+    <Compile Include="models\security.cs" />
+    <Compile Include="models\user.cs" />
+    <Compile Include="models\repair.cs" />
+    <Compile Include="models\service.cs" />
+    <Compile Include="models\tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="services\manFlatService.cs" />
-    <Compile Include="services\manRepairService.cs" />
-    <Compile Include="services\manServiceService.cs" />
-    <Compile Include="services\manTenantService.cs" />
-    <Compile Include="services\secSecurityService.cs" />
+    <Compile Include="repos\flatRepo.cs" />
+    <Compile Include="repos\gatepassRepo.cs" />
+    <Compile Include="repos\repairRepo.cs" />
+    <Compile Include="repos\repo.cs" />
+    <Compile Include="repos\securityRepo.cs" />
+    <Compile Include="repos\serviceRepo.cs" />
+    <Compile Include="repos\tenantRepo.cs" />
+    <Compile Include="repos\verificationRepo.cs" />
+    <Compile Include="secDataAccessFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\dal\dal.csproj">
-      <Project>{180a3559-0687-444f-87be-7cca7a88ad50}</Project>
-      <Name>dal</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\202405141802475_iinitdbb.resx">
+      <DependentUpon>202405141802475_iinitdbb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
