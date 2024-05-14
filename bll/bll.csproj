@@ -93,10 +93,12 @@
     <Compile Include="DTOs\announcementDto.cs" />
     <Compile Include="DTOs\commentDto.cs" />
     <Compile Include="DTOs\reportDto.cs" />
+    <Compile Include="DTOs\ruleDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\announcementServices.cs" />
     <Compile Include="Services\commentServices.cs" />
     <Compile Include="Services\reportServices.cs" />
+    <Compile Include="Services\ruleServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

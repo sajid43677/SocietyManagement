@@ -16,6 +16,8 @@ namespace dal.Models
 
         public DbSet<report> reports { get; set; }
 
+        public DbSet<rule> rules { get; set; }
+
 
     }
 }

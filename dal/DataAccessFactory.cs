@@ -27,6 +27,11 @@ namespace dal
             return new reportRepo();
         }
 
+        public static IRepo<rule,int, rule> RuleData()
+        {
+            return new ruleRepo();
+        }
+
 
     }
 }

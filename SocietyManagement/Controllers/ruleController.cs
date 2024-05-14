@@ -9,16 +9,16 @@ using System.Web.Http;
 
 namespace SocietyManagement.Controllers
 {
-    public class reportController : ApiController
+    public class ruleController : ApiController
     {
         [HttpGet]
-        [Route("api/reports")]
+        [Route("api/rules")]
 
-        public HttpResponseMessage Reports()
+        public HttpResponseMessage Rules()
         {
             try
             {
-                var data = reportServices.Get();
+                var data = ruleServices.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -28,13 +28,13 @@ namespace SocietyManagement.Controllers
         }
 
         [HttpGet]
-        [Route("api/report/{id}")]
+        [Route("api/rule/{id}")]
 
-        public HttpResponseMessage ReportWithId(int id)
+        public HttpResponseMessage RuleWithId(int id)
         {
             try
             {
-                var data = reportServices.Get(id);
+                var data = ruleServices.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -43,15 +43,14 @@ namespace SocietyManagement.Controllers
             }
         }
 
-
         [HttpPost]
-        [Route("api/report/add")]
+        [Route("api/rule/add")]
 
-        public HttpResponseMessage Create(reportDto report)
+        public HttpResponseMessage Create(ruleDto rule)
         {
             try
             {
-                var data = reportServices.Create(report);
+                var data = ruleServices.AddRule(rule);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -61,13 +60,13 @@ namespace SocietyManagement.Controllers
         }
 
         [HttpPut]
-        [Route("api/report/update")]
+        [Route("api/rule/update")]
 
-        public HttpResponseMessage UpdateReport(reportDto report)
+        public HttpResponseMessage UpdateRule(ruleDto rule)
         {
             try
             {
-                var data = reportServices.Update(report);
+                var data = ruleServices.Update(rule);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -77,12 +76,12 @@ namespace SocietyManagement.Controllers
         }
 
         [HttpDelete]
-        [Route("api/report/delete/{id}")]
-        public HttpResponseMessage DeleteReport(int id)
+        [Route("api/rule/delete/{id}")]
+        public HttpResponseMessage DeleteRule(int id)
         {
             try
             {
-                var data = reportServices.Delete(id);
+                var data = ruleServices.Delete(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
