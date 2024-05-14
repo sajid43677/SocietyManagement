@@ -88,7 +88,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DTOs\announcementCommentDto.cs" />
     <Compile Include="DTOs\announcementDto.cs" />
     <Compile Include="DTOs\commentDto.cs" />
@@ -101,7 +100,6 @@
     <Compile Include="Services\ruleServices.cs" />
     <Compile Include="DTOs\manFlatDTO.cs" />
     <Compile Include="DTOs\manRepairDTO.cs" />
-    <Compile Include="DTOs\manFlatDTO.cs" />
     <Compile Include="DTOs\manServiceDTO.cs" />
     <Compile Include="DTOs\manServiceStatus.cs" />
     <Compile Include="DTOs\manTenantDTO.cs" />
